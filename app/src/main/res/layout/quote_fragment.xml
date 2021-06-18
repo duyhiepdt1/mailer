@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="quoteViewModel"
+            type="com.hiepnd.mailer.viewmodel.QuoteViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.QuoteFragment">
+
+
+        <TextView
+            android:id="@+id/textView_subject"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="100dp"
+            android:text="@string/subject"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@{quoteViewModel.quoteResponse.contents.quotes.get(0).title}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView_subject"
+            app:layout_constraintTop_toTopOf="@+id/textView_subject" />
+
+        <TextView
+            android:id="@+id/textView_quote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/quote"
+            app:layout_constraintEnd_toEndOf="@+id/textView_subject"
+            app:layout_constraintStart_toStartOf="@+id/textView_subject"
+            app:layout_constraintTop_toBottomOf="@+id/textView_subject" />
+
+        <TextView
+            android:id="@+id/textView_body"
+            android:layout_width="0dp"
+            android:layout_height="14dp"
+            android:layout_marginStart="16dp"
+            android:text="@{quoteViewModel.quoteResponse.contents.quotes.get(0).quote}"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView_quote"
+            app:layout_constraintTop_toTopOf="@+id/textView_quote" />
+
+        <TextView
+            android:id="@+id/textView_to"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/to"
+            app:layout_constraintEnd_toEndOf="@+id/textView_quote"
+            app:layout_constraintStart_toStartOf="@+id/textView_quote"
+            app:layout_constraintTop_toBottomOf="@+id/textView_quote" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout"
+            android:layout_width="409dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView_to"
+            app:layout_constraintTop_toTopOf="@+id/textView_to">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Email Address" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <Button
+            android:id="@+id/button_send"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/send"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
