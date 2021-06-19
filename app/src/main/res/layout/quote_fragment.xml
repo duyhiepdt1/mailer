@@ -37,17 +37,18 @@
         <TextView
             android:id="@+id/textView_quote"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_marginTop="32dp"
             android:text="@string/quote"
             app:layout_constraintEnd_toEndOf="@+id/textView_subject"
             app:layout_constraintStart_toStartOf="@+id/textView_subject"
-            app:layout_constraintTop_toBottomOf="@+id/textView_subject" />
+            app:layout_constraintTop_toBottomOf="@+id/textView_subject"
+            app:layout_constraintBottom_toBottomOf="@+id/textView_body"/>
 
         <TextView
             android:id="@+id/textView_body"
             android:layout_width="0dp"
-            android:layout_height="14dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:text="@{quoteViewModel.quoteResponse.contents.quotes.get(0).quote}"
             android:visibility="visible"
@@ -67,7 +68,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout"
-            android:layout_width="409dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             app:layout_constraintEnd_toEndOf="parent"

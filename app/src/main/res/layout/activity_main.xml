@@ -20,8 +20,14 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
+    <androidx.fragment.app.FragmentContainerView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/fragment_container_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:name="com.hiepnd.mailer.ui.QuoteFragment" />
 
-    <include layout="@layout/quote_fragment" />
+<!--    <include layout="@layout/quote_fragment" />-->
 
 
 

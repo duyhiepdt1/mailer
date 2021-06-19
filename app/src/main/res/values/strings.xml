@@ -10,7 +10,7 @@
 <!--    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>-->
 
     <string name="send">Send</string>
-    <string name="quote">Quote</string>
+    <string name="quote">Quote:</string>
     <string name="to">To:</string>
     <string name="subject">Subject:</string>
 
