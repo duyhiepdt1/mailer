@@ -1,18 +1,16 @@
-
 package com.hiepnd.mailer.model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-
-public class QuoteResponse {
+public class CategoryResponse {
 
     @SerializedName("success")
     @Expose
     private Success success;
     @SerializedName("contents")
     @Expose
-    private QuoteContents quoteContents;
+    private CategoryContents categoryContents;
     @SerializedName("baseurl")
     @Expose
     private String baseurl;
@@ -28,21 +26,21 @@ public class QuoteResponse {
         this.success = success;
     }
 
-    public QuoteResponse withSuccess(Success success) {
+    public CategoryResponse withSuccess(Success success) {
         this.success = success;
         return this;
     }
 
-    public QuoteContents getQuoteContents() {
-        return quoteContents;
+    public CategoryContents getCategoryContents() {
+        return categoryContents;
     }
 
-    public void setQuoteContents(QuoteContents quoteContents) {
-        this.quoteContents = quoteContents;
+    public void setCategoryContents(CategoryContents categoryContents) {
+        this.categoryContents = categoryContents;
     }
 
-    public QuoteResponse withContents(QuoteContents quoteContents) {
-        this.quoteContents = quoteContents;
+    public CategoryResponse withContents(CategoryContents categoryContents) {
+        this.categoryContents = categoryContents;
         return this;
     }
 
@@ -54,7 +52,7 @@ public class QuoteResponse {
         this.baseurl = baseurl;
     }
 
-    public QuoteResponse withBaseurl(String baseurl) {
+    public CategoryResponse withBaseurl(String baseurl) {
         this.baseurl = baseurl;
         return this;
     }
@@ -67,9 +65,10 @@ public class QuoteResponse {
         this.copyright = copyright;
     }
 
-    public QuoteResponse withCopyright(Copyright copyright) {
+    public CategoryResponse withCopyright(Copyright copyright) {
         this.copyright = copyright;
         return this;
     }
 
 }
+

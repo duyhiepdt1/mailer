@@ -19,7 +19,6 @@ public class QuoteViewModel extends AndroidViewModel {
         super(application);
 
         ApplicationComponent applicationComponent = ((MailApplication) application).applicationComponent;
-        applicationComponent.inject(this);
         this.quoteResponse = applicationComponent.quoteRepository().getQuotes();
     }
 

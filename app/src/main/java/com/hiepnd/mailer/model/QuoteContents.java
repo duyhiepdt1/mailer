@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-public class Contents {
+public class QuoteContents {
 
     @SerializedName("quotes")
     @Expose
@@ -20,7 +20,7 @@ public class Contents {
         this.quotes = quotes;
     }
 
-    public Contents withQuotes(List<Quote> quotes) {
+    public QuoteContents withQuotes(List<Quote> quotes) {
         this.quotes = quotes;
         return this;
     }

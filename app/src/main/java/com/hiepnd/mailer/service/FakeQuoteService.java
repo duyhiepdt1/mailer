@@ -2,7 +2,7 @@ package com.hiepnd.mailer.service;
 
 
 
-import com.hiepnd.mailer.model.Contents;
+import com.hiepnd.mailer.model.QuoteContents;
 import com.hiepnd.mailer.model.Quote;
 import com.hiepnd.mailer.model.QuoteResponse;
 
@@ -38,11 +38,11 @@ public class FakeQuoteService extends AbstractQuoteService{
         fakeQuote.setTitle("Fake Title");
         fakeQuote.setQuote("Fake Quote");
         fakeQuote.setAuthor("Fake Author");
-        List<Quote> fakeQuotes = new ArrayList<Quote>();
+        List<Quote> fakeQuotes = new ArrayList<>();
         fakeQuotes.add(fakeQuote);
-        Contents fakeContents = new Contents();
-        fakeContents.setQuotes(fakeQuotes);
-        fakeResponse.setContents(fakeContents);
+        QuoteContents fakeQuoteContents = new QuoteContents();
+        fakeQuoteContents.setQuotes(fakeQuotes);
+        fakeResponse.setQuoteContents(fakeQuoteContents);
         quote.postValue(fakeResponse);
     }
 }
