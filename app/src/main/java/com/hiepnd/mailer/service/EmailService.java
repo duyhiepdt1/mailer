@@ -2,6 +2,7 @@ package com.hiepnd.mailer.service;
 
 import javax.mail.Session;
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
@@ -24,7 +25,6 @@ public class EmailService extends AsyncTask<Void, Void, Void> {
 
     //Declaring Variables
     private Context context;
-    private Session session;
 
     //Information to send email
     private String[] emails;
@@ -73,7 +73,8 @@ public class EmailService extends AsyncTask<Void, Void, Void> {
         props.put("mail.smtp.port", "465");
 
         //Creating a new session
-        session = Session.getDefaultInstance(props,
+        //Authenticating the password
+        Session session = Session.getDefaultInstance(props,
                 new javax.mail.Authenticator() {
                     //Authenticating the password
                     protected PasswordAuthentication getPasswordAuthentication() {

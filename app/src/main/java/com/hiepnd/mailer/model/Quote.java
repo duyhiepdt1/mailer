@@ -14,6 +14,13 @@ public class Quote {
     @SerializedName("length")
     @Expose
     private String length;
+
+    public Quote(String title, String quote, String author) {
+        this.title = title;
+        this.quote = quote;
+        this.author = author;
+    }
+
     @SerializedName("author")
     @Expose
     private String author;
@@ -41,6 +48,10 @@ public class Quote {
     @SerializedName("title")
     @Expose
     private String title;
+
+    public Quote() {
+
+    }
 
     public String getQuote() {
         return quote;

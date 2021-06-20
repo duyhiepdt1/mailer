@@ -2,7 +2,9 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+
     <data>
+
         <variable
             name="quoteViewModel"
             type="com.hiepnd.mailer.viewmodel.QuoteViewModel" />
@@ -21,7 +23,7 @@
             android:layout_marginTop="100dp"
             android:text="@string/to"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout"
@@ -30,7 +32,7 @@
             android:layout_marginStart="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textView_to"
-            app:layout_constraintTop_toTopOf="@+id/textView_to" >
+            app:layout_constraintTop_toTopOf="@+id/textView_to">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
@@ -54,7 +56,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:text="@{quoteViewModel.quoteResponse.quoteContents.quotes.get(0).title}"
+            android:text="@{quoteViewModel.quoteResponse.quoteContents.quotes.get(0).title ?? `` }"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textView_subject"
             app:layout_constraintTop_toTopOf="@+id/textView_subject" />
@@ -65,17 +67,17 @@
             android:layout_height="0dp"
             android:layout_marginTop="32dp"
             android:text="@string/quote"
+            app:layout_constraintBottom_toBottomOf="@+id/textView_body"
             app:layout_constraintEnd_toEndOf="@+id/textView_subject"
             app:layout_constraintStart_toStartOf="@+id/textView_subject"
-            app:layout_constraintTop_toBottomOf="@+id/textView_subject"
-            app:layout_constraintBottom_toBottomOf="@+id/textView_body"/>
+            app:layout_constraintTop_toBottomOf="@+id/textView_subject" />
 
         <TextView
             android:id="@+id/textView_body"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:text="@{quoteViewModel.quoteResponse.quoteContents.quotes.get(0).quote + '\n' + @string/author + quoteViewModel.quoteResponse.quoteContents.quotes.get(0).author}"
+            android:text="@{quoteViewModel.quoteResponse.quoteContents.quotes.get(0).quote != null ? quoteViewModel.quoteResponse.quoteContents.quotes.get(0).quote + '\n' + @string/author + quoteViewModel.quoteResponse.quoteContents.quotes.get(0).author  : ``}"
             android:visibility="visible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textView_quote"

@@ -1,7 +1,5 @@
 package com.hiepnd.mailer;
 
-import android.app.Application;
-
 import com.hiepnd.mailer.repository.QuoteRepository;
 import com.hiepnd.mailer.service.FakeQuoteService;
 import com.hiepnd.mailer.service.QuoteService;

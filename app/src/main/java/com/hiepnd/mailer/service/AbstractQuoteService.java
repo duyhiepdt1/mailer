@@ -2,11 +2,10 @@ package com.hiepnd.mailer.service;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
-
 import com.hiepnd.mailer.model.QuoteResponse;
 
-
 public abstract class AbstractQuoteService {
+
     protected MutableLiveData<QuoteResponse> quote = new MutableLiveData<>();
 
     public LiveData<QuoteResponse> getQuote() {

@@ -11,7 +11,6 @@ import javax.inject.Singleton;
 @Singleton
 public class QuoteRepository {
     private static final String TAG = QuoteRepository.class.getSimpleName();
-
     AbstractQuoteService quoteService;
 
     @Inject
@@ -21,6 +20,7 @@ public class QuoteRepository {
 
 
     public LiveData<QuoteResponse> getQuotes() {
+
         quoteService.callQuotesApi();
         return quoteService.getQuote();
     }

@@ -20,6 +20,14 @@ public class QuoteResponse {
     @Expose
     private Copyright copyright;
 
+    public QuoteResponse() {
+
+    }
+
+    public QuoteResponse(QuoteContents quoteContents) {
+        this.quoteContents = quoteContents;
+    }
+
     public Success getSuccess() {
         return success;
     }

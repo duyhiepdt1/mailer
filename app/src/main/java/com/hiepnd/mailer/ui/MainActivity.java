@@ -1,16 +1,13 @@
 package com.hiepnd.mailer.ui;
 
 import android.os.Bundle;
-
-import com.hiepnd.mailer.R;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import android.view.View;
-
-import android.view.Menu;
-import android.view.MenuItem;
+import com.hiepnd.mailer.R;
 
 public class MainActivity extends AppCompatActivity {
 

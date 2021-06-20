@@ -12,6 +12,14 @@ public class QuoteContents {
     @Expose
     private List<Quote> quotes = null;
 
+    public QuoteContents(List<Quote> quotes) {
+        this.quotes = quotes;
+    }
+
+    public QuoteContents() {
+
+    }
+
     public List<Quote> getQuotes() {
         return quotes;
     }

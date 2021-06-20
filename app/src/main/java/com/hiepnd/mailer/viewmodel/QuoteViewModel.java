@@ -10,7 +10,6 @@ import com.hiepnd.mailer.ApplicationComponent;
 import com.hiepnd.mailer.MailApplication;
 import com.hiepnd.mailer.model.QuoteResponse;
 
-
 public class QuoteViewModel extends AndroidViewModel {
 
     private LiveData<QuoteResponse> quoteResponse;

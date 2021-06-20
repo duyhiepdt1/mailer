@@ -2,6 +2,8 @@ package com.hiepnd.mailer.service;
 
 import android.util.Log;
 
+import androidx.annotation.NonNull;
+
 import com.hiepnd.mailer.api.QuotesApi;
 import com.hiepnd.mailer.api.RetrofitRequest;
 import com.hiepnd.mailer.model.CategoryResponse;
@@ -45,10 +47,10 @@ public class QuoteService extends AbstractQuoteService {
         quotesApi.getCategories("en", false)
                 .enqueue(new Callback<CategoryResponse>() {
                     @Override
-                    public void onResponse(Call<CategoryResponse> call, Response<CategoryResponse> response) {
+                    public void onResponse(@NonNull Call<CategoryResponse> call, @NonNull Response<CategoryResponse> response) {
 //                        Log.d(TAG, "onResponse response:: " + response);
                         if (response.body() != null) {
-                            HashMap<String, String> catMap = response.body().getCategoryContents().getCategories();
+                            HashMap catMap = response.body().getCategoryContents().getCategories();
                             Set<String> catSet = catMap.keySet();
                             int bound = catSet.size();
                             String[] catArray = new String[bound];
@@ -59,7 +61,7 @@ public class QuoteService extends AbstractQuoteService {
                                     .enqueue(new Callback<QuoteResponse>() {
 
                                         @Override
-                                        public void onResponse(Call<QuoteResponse> call, Response<QuoteResponse> response) {
+                                        public void onResponse(@NonNull Call<QuoteResponse> call, @NonNull Response<QuoteResponse> response) {
                                             Log.d(TAG, "onResponse response:: " + response);
 
                                             if (response.body() != null) {
@@ -71,7 +73,7 @@ public class QuoteService extends AbstractQuoteService {
                                         }
 
                                         @Override
-                                        public void onFailure(Call<QuoteResponse> call, Throwable t) {
+                                        public void onFailure(@NonNull Call<QuoteResponse> call, @NonNull Throwable t) {
                                             quote.setValue(null);
                                         }
                                     });
@@ -80,7 +82,7 @@ public class QuoteService extends AbstractQuoteService {
                     }
 
                     @Override
-                    public void onFailure(Call<CategoryResponse> call, Throwable t) {
+                    public void onFailure(@NonNull Call<CategoryResponse> call, @NonNull Throwable t) {
                         quote.setValue(null);
                     }
                 });

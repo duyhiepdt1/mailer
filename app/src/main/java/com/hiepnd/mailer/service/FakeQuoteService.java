@@ -33,16 +33,11 @@ public class FakeQuoteService extends AbstractQuoteService{
 
     @Override
     public void callQuotesApi() {
-        QuoteResponse fakeResponse = new QuoteResponse();
-        Quote fakeQuote = new Quote();
-        fakeQuote.setTitle("Fake Title");
-        fakeQuote.setQuote("Fake Quote");
-        fakeQuote.setAuthor("Fake Author");
+        Quote fakeQuote = new Quote("Fake Title", "Fake Quote", "Fake Author");
         List<Quote> fakeQuotes = new ArrayList<>();
         fakeQuotes.add(fakeQuote);
-        QuoteContents fakeQuoteContents = new QuoteContents();
-        fakeQuoteContents.setQuotes(fakeQuotes);
-        fakeResponse.setQuoteContents(fakeQuoteContents);
+        QuoteContents fakeQuoteContents = new QuoteContents(fakeQuotes);
+        QuoteResponse fakeResponse = new QuoteResponse(fakeQuoteContents);
         quote.postValue(fakeResponse);
     }
 }
