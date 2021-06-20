@@ -24,4 +24,10 @@ public class Success {
         return this;
     }
 
+    @Override
+    public String toString() {
+        return "Success{" +
+                "total=" + total +
+                '}';
+    }
 }

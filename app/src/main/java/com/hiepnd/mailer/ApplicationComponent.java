@@ -8,7 +8,7 @@ import javax.inject.Singleton;
 
 import dagger.Component;
 
-// Use FakeQuoteService class or QuoteService to call real API
+// Use FakeQuoteService class to test QuoteRepository and QuoteViewModel or QuoteService to call real API
 @Singleton
 @Component(modules = {QuoteService.Module.class})
 public interface ApplicationComponent {

@@ -38,6 +38,6 @@ public class FakeQuoteService extends AbstractQuoteService{
         fakeQuotes.add(fakeQuote);
         QuoteContents fakeQuoteContents = new QuoteContents(fakeQuotes);
         QuoteResponse fakeResponse = new QuoteResponse(fakeQuoteContents);
-        quote.postValue(fakeResponse);
+        quote.setValue(fakeResponse);
     }
 }

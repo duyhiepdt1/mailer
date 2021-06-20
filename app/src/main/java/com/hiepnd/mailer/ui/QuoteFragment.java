@@ -28,7 +28,7 @@ public class QuoteFragment extends Fragment {
             LayoutInflater  inflater, ViewGroup container,
             Bundle savedInstanceState
     ) {
-        Log.println(Log.INFO, "QuoteFragment", "onCreateView");
+//        Log.println(Log.INFO, "QuoteFragment", "onCreateView");
         // Inflate this data binding layout
         mBinding = DataBindingUtil.inflate(inflater, R.layout.quote_fragment, container, false);
 
@@ -38,7 +38,7 @@ public class QuoteFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        Log.println(Log.INFO, "QuoteFragment", "onViewCreated");
+//        Log.println(Log.INFO, "QuoteFragment", "onViewCreated");
 
         final QuoteViewModel model = new ViewModelProvider(this).get(QuoteViewModel.class);
         mBinding.setLifecycleOwner(getViewLifecycleOwner());
@@ -94,6 +94,7 @@ public class QuoteFragment extends Fragment {
         model.getQuoteResponse().observe(getViewLifecycleOwner(), quoteResponse -> {
             if (quoteResponse != null) {
                 Log.println(Log.INFO, "QuoteFragment", quoteResponse.toString());
+                mBinding.setQuoteViewModel(model);
             }
         });
     }

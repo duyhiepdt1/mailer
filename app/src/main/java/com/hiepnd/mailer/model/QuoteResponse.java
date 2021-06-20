@@ -41,6 +41,16 @@ public class QuoteResponse {
         return this;
     }
 
+    @Override
+    public String toString() {
+        return "QuoteResponse{" +
+                "success=" + success +
+                ", quoteContents=" + quoteContents +
+                ", baseurl='" + baseurl + '\'' +
+                ", copyright=" + copyright +
+                '}';
+    }
+
     public QuoteContents getQuoteContents() {
         return quoteContents;
     }

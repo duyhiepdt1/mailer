@@ -33,4 +33,10 @@ public class QuoteContents {
         return this;
     }
 
+    @Override
+    public String toString() {
+        return "QuoteContents{" +
+                "quotes=" + quotes +
+                '}';
+    }
 }

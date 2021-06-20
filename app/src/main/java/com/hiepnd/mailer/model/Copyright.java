@@ -39,4 +39,11 @@ public class Copyright {
         return this;
     }
 
+    @Override
+    public String toString() {
+        return "Copyright{" +
+                "year=" + year +
+                ", url='" + url + '\'' +
+                '}';
+    }
 }
